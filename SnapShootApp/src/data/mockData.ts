@@ -1,4 +1,4 @@
-// Mock data for the Flashoot app
+// Mock data for the SnapShoot app
 
 export interface Service {
   id: string;

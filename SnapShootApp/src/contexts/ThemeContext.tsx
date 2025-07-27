@@ -18,7 +18,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 // Storage key for theme preference
-const THEME_STORAGE_KEY = '@flashoot_theme_mode';
+const THEME_STORAGE_KEY = '@snapshoot_theme_mode';
 
 // Theme provider props
 interface ThemeProviderProps {

@@ -1,9 +1,9 @@
-# 📁 Flashoot App - Project Structure
+# 📁 SnapShoot App - Project Structure
 
 ## 🏗️ Main Directory Structure
 
 ```
-flashoot-app/
+snapshoot-app/
 ├── 📱 src/
 │   ├── 🧩 components/          # Reusable UI components
 │   ├── 📄 screens/            # Application screens
@@ -347,7 +347,7 @@ __tests__/
 ## 📝 Configuration Files
 
 ```
-flashoot-app/
+snapshoot-app/
 ├── package.json         # Dependencies & scripts
 ├── app.json            # Expo configuration
 ├── metro.config.js     # Metro bundler config

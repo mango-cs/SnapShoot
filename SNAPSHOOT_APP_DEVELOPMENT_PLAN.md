@@ -1,10 +1,10 @@
-# 🎬 FLASHOOT APP - Complete Development Plan
+# 🎬 SNAPSHOOT APP - Complete Development Plan
 
 > **A comprehensive photography/videography service booking platform**
 
 ## 📋 Executive Summary
 
-**Flashoot** is a mobile app that connects users with professional photographers and videographers for various events (weddings, corporate, celebrity shoots, birthdays). The app features a modern dark UI with red accents, wallet system, booking management, and a partner network.
+**SnapShoot** is a mobile app that connects users with professional photographers and videographers for various events (weddings, corporate, celebrity shoots, birthdays). The app features a modern dark UI with red accents, wallet system, booking management, and a partner network.
 
 ## 🎯 Project Objectives
 
@@ -500,8 +500,8 @@ interface Partner {
 ```bash
 # Local development setup
 npm install -g @expo/cli
-expo init FlashootApp --template expo-template-bare-typescript
-cd FlashootApp
+expo init SnapShootApp --template expo-template-bare-typescript
+cd SnapShootApp
 expo install expo-dev-client
 ```
 
@@ -560,4 +560,4 @@ expo install expo-dev-client
 
 ---
 
-*This comprehensive plan provides a roadmap for building a production-ready Flashoot app that not only replicates the original design but enhances it with modern features, better performance, and superior user experience.* 
+*This comprehensive plan provides a roadmap for building a production-ready SnapShoot app that not only replicates the original design but enhances it with modern features, better performance, and superior user experience.* 

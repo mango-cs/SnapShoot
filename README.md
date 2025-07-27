@@ -1,4 +1,4 @@
-# ⚡ Flashoot App - Complete Photography & Videography Booking Platform
+# ⚡ SnapShoot App - Complete Photography & Videography Booking Platform
 
 <p align="center">
   <img src="https://img.shields.io/badge/React%20Native-0.74-61DAFB?style=for-the-badge&logo=react" alt="React Native" />
@@ -11,7 +11,7 @@
 
 ## 🎯 Overview
 
-Flashoot is a comprehensive booking platform designed to bridge the gap between users seeking professional photography/videography services and talented service providers. Built with React Native and modern technologies, it offers a seamless experience for discovering, booking, and managing photography sessions.
+SnapShoot is a comprehensive booking platform designed to bridge the gap between users seeking professional photography/videography services and talented service providers. Built with React Native and modern technologies, it offers a seamless experience for discovering, booking, and managing photography sessions.
 
 ### 🌟 Key Features
 
@@ -62,9 +62,9 @@ Flashoot is a comprehensive booking platform designed to bridge the gap between 
 
 ## 📋 Project Documents
 
-- **[📖 Complete Development Plan](./FLASHOOT_APP_DEVELOPMENT_PLAN.md)** - Comprehensive roadmap and feature specifications
+- **[📖 Complete Development Plan](./SNAPSHOOT_APP_DEVELOPMENT_PLAN.md)** - Comprehensive roadmap and feature specifications
 - **[📁 Project Structure](./PROJECT_STRUCTURE.md)** - Detailed file organization and architecture
-- **[📸 Original Analysis](./flashoot%20app%20clone-%20info.txt)** - Analysis of the original app screenshots
+- **[📸 Original Analysis](./snapshoot%20app%20clone-%20info.txt)** - Analysis of the original app screenshots
 
 ## 🚀 Quick Start
 
@@ -86,8 +86,8 @@ git --version
 1. **Clone and Initialize**
    ```bash
    # Create new Expo project
-   npx create-expo-app FlashootApp --template expo-template-blank-typescript
-   cd FlashootApp
+   npx create-expo-app SnapShootApp --template expo-template-blank-typescript
+   cd SnapShootApp
 
    # Install dependencies
    npm install
@@ -276,7 +276,7 @@ eas build --platform all
 - Image caching improvements planned
 - Offline mode partial implementation
 
-See [Issues](https://github.com/your-repo/flashoot-app/issues) for complete list.
+See [Issues](https://github.com/your-repo/snapshoot-app/issues) for complete list.
 
 ## 📄 License
 
@@ -284,13 +284,13 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 📞 Support
 
-- **Email**: support@flashoot.com
-- **Discord**: [Join our community](https://discord.gg/flashoot)
-- **Documentation**: [docs.flashoot.com](https://docs.flashoot.com)
+- **Email**: support@snapshoot.com
+- **Discord**: [Join our community](https://discord.gg/snapshoot)
+- **Documentation**: [docs.snapshoot.com](https://docs.snapshoot.com)
 
 ## 🙏 Acknowledgments
 
-- Original Flashoot app design inspiration
+- Original SnapShoot app design inspiration
 - React Native community
 - Expo team for excellent tooling
 - Firebase for backend services
@@ -299,11 +299,11 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ---
 
 <p align="center">
-  <strong>Made with ❤️ by the Flashoot Team</strong>
+  <strong>Made with ❤️ by the SnapShoot Team</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/your-repo/flashoot-app?style=social" alt="GitHub stars" />
-  <img src="https://img.shields.io/github/forks/your-repo/flashoot-app?style=social" alt="GitHub forks" />
-  <img src="https://img.shields.io/github/watchers/your-repo/flashoot-app?style=social" alt="GitHub watchers" />
+  <img src="https://img.shields.io/github/stars/your-repo/snapshoot-app?style=social" alt="GitHub stars" />
+  <img src="https://img.shields.io/github/forks/your-repo/snapshoot-app?style=social" alt="GitHub forks" />
+  <img src="https://img.shields.io/github/watchers/your-repo/snapshoot-app?style=social" alt="GitHub watchers" />
 </p> 
