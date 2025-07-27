@@ -217,7 +217,7 @@ Excellent. Here's a complete breakdown of the Home Page from bottom to top, incl
 ________________
 
 
-✅ Finalized Home Page UI/UX Breakdown – Flashoot App Clone Blueprint
+✅ Finalized Home Page UI/UX Breakdown – SnapShoot App Clone Blueprint
 ________________
 
 
@@ -438,7 +438,7 @@ You’ve now completed the entire 4-tab navigation app. Here's a full breakdown 
 ________________
 
 
-✅ Flashoot App Clone: Page 3 & 4 Summary
+✅ SnapShoot App Clone: Page 3 & 4 Summary
 (Final App Architecture – Based on all uploaded screens)
 ________________
 
