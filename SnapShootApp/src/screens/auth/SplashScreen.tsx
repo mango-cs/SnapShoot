@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 30,
     transform: [{ skewX: '-15deg' }],
-    shadowColor: '#FF0000',
+    shadowColor: '#3B82F6',
     shadowOffset: {
       width: 0,
       height: 0,

@@ -11,6 +11,7 @@ import {
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useTheme } from '../../contexts/ThemeContext';
 import { PrimaryButton } from '../../components/ui/Button';
+import { useTranslation } from '../../hooks/useTranslation';
 
 interface RouteParams {
   phoneNumber: string;
@@ -20,6 +21,7 @@ const OTPVerificationScreen: React.FC = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const { phoneNumber } = route.params as RouteParams;
   
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
@@ -49,7 +51,8 @@ const OTPVerificationScreen: React.FC = () => {
   };
 
   const maskPhoneNumber = (phone: string): string => {
-    return `+91 ${phone.slice(0, 2)}**${phone.slice(-2)}**${phone.slice(-2)}`;
+    // Format: +91 99**2**44 (show first 2, mask middle digits, show last 2)
+    return `+91 ${phone.slice(0, 2)}**${phone.slice(4, 5)}**${phone.slice(-2)}`;
   };
 
   const handleOtpChange = (value: string, index: number) => {
@@ -128,19 +131,19 @@ const OTPVerificationScreen: React.FC = () => {
         {/* Back Button */}
         <TouchableOpacity style={styles.backButton} onPress={handleBack}>
           <Text style={[styles.backButtonText, { color: theme.colors.text.primary }]}>
-            ← Back
+            ←
           </Text>
         </TouchableOpacity>
 
         {/* Header */}
         <View style={styles.header}>
           <Text style={[styles.title, { color: theme.colors.text.primary }]}>
-            OTP Verification
+            {t('auth.otpVerification')}
           </Text>
           <Text style={[styles.subtitle, { color: theme.colors.text.secondary }]}>
-            Enter the verification code sent to
+            {t('auth.enterOtp')}
           </Text>
-          <Text style={[styles.phoneNumber, { color: theme.colors.text.primary }]}>
+          <Text style={[styles.phoneNumber, { color: theme.colors.brand.primary }]}>
             {maskPhoneNumber(phoneNumber)}
           </Text>
         </View>
@@ -196,7 +199,7 @@ const OTPVerificationScreen: React.FC = () => {
         {/* Verify Button */}
         <View style={styles.buttonContainer}>
           <PrimaryButton
-            title="Verify OTP"
+            title={t('auth.verifyOtp')}
             onPress={handleVerifyOTP}
             loading={isLoading}
             disabled={otp.join('').length !== 6}
@@ -224,37 +227,40 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   backButtonText: {
-    fontSize: 16,
+    fontSize: 40, // 2.5x bigger than normal (16 * 2.5 = 40)
     fontWeight: '500',
   },
   header: {
     alignItems: 'center',
-    marginTop: 40,
-    marginBottom: 60,
+    marginTop: 60,
+    marginBottom: 80,
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: 24,
+    textAlign: 'center',
   },
   subtitle: {
     fontSize: 16,
     marginBottom: 8,
     textAlign: 'center',
+    lineHeight: 22,
   },
   phoneNumber: {
     fontSize: 18,
     fontWeight: '600',
+    marginTop: 4,
   },
   otpContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 32,
-    paddingHorizontal: 20,
+    marginBottom: 40,
+    paddingHorizontal: 16,
   },
   otpInput: {
-    width: 45,
-    height: 55,
+    width: 48,
+    height: 58,
     borderWidth: 2,
     borderRadius: 8,
     fontSize: 20,
@@ -262,14 +268,14 @@ const styles = StyleSheet.create({
   },
   timerContainer: {
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: 12,
   },
   timerText: {
     fontSize: 14,
   },
   resendContainer: {
     alignItems: 'center',
-    marginBottom: 60,
+    marginBottom: 80,
   },
   resendText: {
     fontSize: 16,

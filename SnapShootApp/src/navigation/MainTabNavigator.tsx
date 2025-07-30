@@ -2,16 +2,17 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme } from '../contexts/ThemeContext';
+import LottieView from 'lottie-react-native';
 
 // Import screen components (we'll create these next)
 import HomeScreen from '../screens/home/HomeScreen';
-import BookingsScreen from '../screens/bookings/BookingsScreen';
+import CategoryScreen from '../screens/bookings/CategoryScreen';
 import WalletScreen from '../screens/wallet/WalletScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 
 export type MainTabParamList = {
   Home: undefined;
-  Bookings: undefined;
+  Explore: undefined;
   Wallet: undefined;
   Profile: undefined;
 };
@@ -23,14 +24,50 @@ interface TabIconProps {
   focused: boolean;
   color: string;
   size: number;
-  icon: string;
+  icon?: string;
+  lottieSource?: any;
+  iconSize?: number; // Custom size for specific icons
 }
 
-const TabIcon: React.FC<TabIconProps> = ({ focused, color, icon }) => {
+const TabIcon: React.FC<TabIconProps> = ({ focused, color, icon, lottieSource, iconSize }) => {
+  const lottieRef = React.useRef<LottieView>(null);
+  const prevFocused = React.useRef(focused);
+  const playCount = React.useRef(0);
+
+  React.useEffect(() => {
+    // Play animation when tab becomes focused (when pressed)
+    if (focused && !prevFocused.current && lottieSource && lottieRef.current) {
+      playCount.current = 0; // Reset play count
+      lottieRef.current.play();
+    }
+    prevFocused.current = focused;
+  }, [focused, lottieSource]);
+
+  const handleAnimationFinish = () => {
+    playCount.current += 1;
+    if (playCount.current < 2 && lottieRef.current) {
+      // Play again if we haven't reached 2 plays yet
+      lottieRef.current.play();
+    }
+  };
+
+  // Use custom icon size if provided, otherwise use default
+  const iconStyle = iconSize ? { width: iconSize, height: iconSize } : styles.lottieIcon;
+
   return (
-    <View style={[styles.tabIcon, focused && styles.tabIconFocused]}>
-      <Text style={[styles.tabIconText, { color }]}>{icon}</Text>
-      {focused && <View style={[styles.tabIndicator, { backgroundColor: color }]} />}
+    <View style={styles.tabIcon}>
+      {lottieSource ? (
+        <LottieView
+          ref={lottieRef}
+          source={lottieSource}
+          style={iconStyle}
+          autoPlay={false}
+          loop={false}
+          onAnimationFinish={handleAnimationFinish}
+        />
+      ) : (
+        <Text style={[styles.tabIconText, { color }]}>{icon}</Text>
+      )}
     </View>
   );
 };
@@ -51,9 +88,9 @@ const MainTabNavigator: React.FC = () => {
           shadowOffset: { width: 0, height: -2 },
           shadowOpacity: 0.1,
           shadowRadius: 10,
-          height: 80,
-          paddingBottom: 10,
-          paddingTop: 10,
+          height: 70,
+          paddingBottom: 8,
+          paddingTop: 8,
         },
         tabBarShowLabel: false,
         tabBarActiveTintColor: theme.colors.brand.primary,
@@ -65,16 +102,28 @@ const MainTabNavigator: React.FC = () => {
         component={HomeScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <TabIcon focused={focused} color={color} size={size} icon="🏠" />
+            <TabIcon 
+              focused={focused} 
+              color={color} 
+              size={size} 
+              lottieSource={require('../assets/animations/home-indicator.json')}
+              iconSize={28} // Standard size for consistency
+            />
           ),
         }}
       />
       <Tab.Screen
-        name="Bookings"
-        component={BookingsScreen}
+        name="Explore"
+        component={CategoryScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <TabIcon focused={focused} color={color} size={size} icon="📅" />
+            <TabIcon 
+              focused={focused} 
+              color={color} 
+              size={size} 
+              lottieSource={require('../assets/animations/explore-indicator.json')}
+              iconSize={31} // Enlarged by 10% for better visibility
+            />
           ),
         }}
       />
@@ -83,7 +132,13 @@ const MainTabNavigator: React.FC = () => {
         component={WalletScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <TabIcon focused={focused} color={color} size={size} icon="💳" />
+            <TabIcon 
+              focused={focused} 
+              color={color} 
+              size={size} 
+              lottieSource={require('../assets/animations/wallet-indicator.json')}
+              iconSize={28} // Standard size for consistency
+            />
           ),
         }}
       />
@@ -92,7 +147,13 @@ const MainTabNavigator: React.FC = () => {
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
-            <TabIcon focused={focused} color={color} size={size} icon="👤" />
+            <TabIcon 
+              focused={focused} 
+              color={color} 
+              size={size} 
+              lottieSource={require('../assets/animations/profile-indicator.json')}
+              iconSize={32} // Slightly larger for profile but still centered
+            />
           ),
         }}
       />
@@ -104,24 +165,20 @@ const styles = StyleSheet.create({
   tabIcon: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
+    paddingVertical: 4,
+    paddingHorizontal: 4,
     position: 'relative',
-  },
-  tabIconFocused: {
-    backgroundColor: 'rgba(255, 0, 0, 0.1)',
-    borderRadius: 20,
+    width: 40,
+    height: 40,
   },
   tabIconText: {
     fontSize: 24,
   },
-  tabIndicator: {
-    position: 'absolute',
-    bottom: -2,
-    width: 6,
-    height: 6,
-    borderRadius: 3,
+  lottieIcon: {
+    width: 28,
+    height: 28,
   },
+
 });
 
 export default MainTabNavigator; 

@@ -80,7 +80,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
 const styles = StyleSheet.create({
   button: {
     backgroundColor: colors.button.primary,
-    borderRadius: layout.borderRadius.full,
+    borderRadius: layout.borderRadius.xl,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',

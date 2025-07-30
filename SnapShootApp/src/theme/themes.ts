@@ -5,8 +5,8 @@ export type ThemeMode = 'light' | 'dark';
 const baseColors = {
   // Brand colors (consistent across themes)
   brand: {
-    primary: '#FF0000',
-    secondary: '#CC0000',
+    primary: '#3B82F6',
+    secondary: '#2563EB',
   },
   
   // Status colors (consistent across themes)
@@ -26,7 +26,7 @@ export const darkTheme = {
     
     // Primary colors
     primary: {
-      red: '#FF0000',
+      red: '#3B82F6',
       black: '#000000',
       white: '#FFFFFF',
     },
@@ -47,7 +47,7 @@ export const darkTheme = {
       secondary: '#B0B0B0',
       tertiary: '#808080',
       inverse: '#000000',
-      accent: '#FF0000',
+      accent: '#3B82F6',
       muted: '#666666',
     },
     
@@ -55,17 +55,17 @@ export const darkTheme = {
     border: {
       primary: '#404040',
       secondary: '#2A2A2A',
-      accent: '#FF0000',
+      accent: '#3B82F6',
       light: '#333333',
     },
     
     // Component specific colors
     button: {
-      primary: '#FF0000',
+      primary: '#3B82F6',
       primaryText: '#FFFFFF',
       secondary: 'transparent',
-      secondaryText: '#FF0000',
-      secondaryBorder: '#FF0000',
+      secondaryText: '#3B82F6',
+      secondaryBorder: '#3B82F6',
       disabled: '#404040',
       disabledText: '#808080',
     },
@@ -73,7 +73,7 @@ export const darkTheme = {
     input: {
       background: '#1A1A1A',
       border: '#404040',
-      borderFocused: '#FF0000',
+      borderFocused: '#3B82F6',
       text: '#FFFFFF',
       placeholder: '#808080',
     },
@@ -86,9 +86,9 @@ export const darkTheme = {
     
     navigation: {
       background: '#000000',
-      activeTab: '#FF0000',
+      activeTab: '#3B82F6',
       inactiveTab: '#808080',
-      indicator: '#FF0000',
+      indicator: '#3B82F6',
     },
   },
 } as const;
@@ -101,7 +101,7 @@ export const lightTheme = {
     
     // Primary colors
     primary: {
-      red: '#FF0000',
+      red: '#3B82F6',
       black: '#000000',
       white: '#FFFFFF',
     },
@@ -122,7 +122,7 @@ export const lightTheme = {
       secondary: '#6C757D',
       tertiary: '#ADB5BD',
       inverse: '#FFFFFF',
-      accent: '#FF0000',
+      accent: '#3B82F6',
       muted: '#868E96',
     },
     
@@ -130,17 +130,17 @@ export const lightTheme = {
     border: {
       primary: '#DEE2E6',
       secondary: '#E9ECEF',
-      accent: '#FF0000',
+      accent: '#3B82F6',
       light: '#F1F3F4',
     },
     
     // Component specific colors
     button: {
-      primary: '#FF0000',
+      primary: '#3B82F6',
       primaryText: '#FFFFFF',
       secondary: 'transparent',
-      secondaryText: '#FF0000',
-      secondaryBorder: '#FF0000',
+      secondaryText: '#3B82F6',
+      secondaryBorder: '#3B82F6',
       disabled: '#E9ECEF',
       disabledText: '#ADB5BD',
     },
@@ -148,7 +148,7 @@ export const lightTheme = {
     input: {
       background: '#FFFFFF',
       border: '#DEE2E6',
-      borderFocused: '#FF0000',
+      borderFocused: '#3B82F6',
       text: '#000000',
       placeholder: '#6C757D',
     },
@@ -161,9 +161,9 @@ export const lightTheme = {
     
     navigation: {
       background: '#FFFFFF',
-      activeTab: '#FF0000',
+      activeTab: '#3B82F6',
       inactiveTab: '#6C757D',
-      indicator: '#FF0000',
+      indicator: '#3B82F6',
     },
   },
 } as const;

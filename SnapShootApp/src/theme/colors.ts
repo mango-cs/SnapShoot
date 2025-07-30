@@ -1,7 +1,7 @@
 export const colors = {
   // Primary Colors
   primary: {
-    red: '#FF0000',
+    red: '#3B82F6',
     black: '#000000',
     white: '#FFFFFF',
   },
@@ -24,7 +24,7 @@ export const colors = {
   
   // Gradients
   gradients: {
-    redGradient: ['#FF0000', '#CC0000'],
+    redGradient: ['#3B82F6', '#2563EB'],
     darkGradient: ['#000000', '#1A1A1A'],
     grayGradient: ['#404040', '#1A1A1A'],
   },
@@ -44,24 +44,24 @@ export const colors = {
     secondary: '#808080',
     tertiary: '#404040',
     inverse: '#000000',
-    accent: '#FF0000',
+    accent: '#3B82F6',
   },
   
   // Border Colors
   border: {
     primary: '#404040',
     secondary: '#1A1A1A',
-    accent: '#FF0000',
+    accent: '#3B82F6',
     light: '#808080',
   },
   
   // Component Specific Colors
   button: {
-    primary: '#FF0000',
+    primary: '#3B82F6',
     primaryText: '#FFFFFF',
     secondary: 'transparent',
-    secondaryText: '#FF0000',
-    secondaryBorder: '#FF0000',
+    secondaryText: '#3B82F6',
+    secondaryBorder: '#3B82F6',
     disabled: '#404040',
     disabledText: '#808080',
   },
@@ -69,7 +69,7 @@ export const colors = {
   input: {
     background: '#1A1A1A',
     border: '#404040',
-    borderFocused: '#FF0000',
+    borderFocused: '#3B82F6',
     text: '#FFFFFF',
     placeholder: '#808080',
   },
@@ -82,13 +82,13 @@ export const colors = {
   
   navigation: {
     background: '#000000',
-    activeTab: '#FF0000',
+    activeTab: '#3B82F6',
     inactiveTab: '#808080',
-    indicator: '#FF0000',
+    indicator: '#3B82F6',
   },
   
   wallet: {
-    cardBackground: '#FF0000',
+    cardBackground: '#3B82F6',
     cardText: '#FFFFFF',
     balance: '#FFFFFF',
     transactions: '#10B981',

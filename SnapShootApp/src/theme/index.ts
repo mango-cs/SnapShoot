@@ -24,7 +24,7 @@ export const componentThemes = {
     primary: {
       backgroundColor: colors.button.primary,
       color: colors.button.primaryText,
-      borderRadius: layout.borderRadius.full,
+      borderRadius: layout.borderRadius.xl,
       paddingHorizontal: componentSpacing.button.padding.medium.horizontal,
       paddingVertical: componentSpacing.button.padding.medium.vertical,
       ...textStyles.button.medium,
@@ -34,7 +34,7 @@ export const componentThemes = {
       color: colors.button.secondaryText,
       borderColor: colors.button.secondaryBorder,
       borderWidth: 1,
-      borderRadius: layout.borderRadius.full,
+      borderRadius: layout.borderRadius.xl,
       paddingHorizontal: componentSpacing.button.padding.medium.horizontal,
       paddingVertical: componentSpacing.button.padding.medium.vertical,
       ...textStyles.button.medium,

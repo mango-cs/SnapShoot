@@ -9,12 +9,25 @@ import MainTabNavigator from './MainTabNavigator';
 
 // Import screens
 import SplashScreen from '../screens/auth/SplashScreen';
+import EditProfileScreen from '../screens/profile/EditProfileScreen';
+import CityPickerScreen from '../screens/home/CityPickerScreen';
+import ServicePlanSelectionScreen from '../screens/bookings/ServicePlanSelectionScreen';
+import ReferralScreen from '../screens/wallet/ReferralScreen';
+import AddMoneyScreen from '../screens/wallet/AddMoneyScreen';
 
 // Define navigation types
 export type RootStackParamList = {
   Splash: undefined;
   Auth: undefined;
   Main: undefined;
+  EditProfile: undefined;
+  CitySelection: undefined;
+  ServicePlanSelection: {
+    serviceType: 'wedding' | 'celebrity';
+    serviceName: string;
+  };
+  Referral: undefined;
+  AddMoney: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -68,6 +81,48 @@ const AppNavigator: React.FC = () => {
           component={MainTabNavigator}
           options={{
             animation: 'slide_from_right',
+          }}
+        />
+        <Stack.Screen
+          name="EditProfile"
+          component={EditProfileScreen}
+          options={{
+            presentation: 'modal',
+            animation: 'slide_from_bottom',
+          }}
+        />
+        <Stack.Screen
+          name="CitySelection"
+          component={CityPickerScreen}
+          options={{
+            presentation: 'modal',
+            animation: 'slide_from_bottom',
+          }}
+        />
+        <Stack.Screen
+          name="ServicePlanSelection"
+          component={ServicePlanSelectionScreen}
+          options={{
+            presentation: 'fullScreenModal',
+            animation: 'slide_from_right',
+          }}
+        />
+        <Stack.Screen
+          name="Referral"
+          component={ReferralScreen}
+          options={{
+            presentation: 'fullScreenModal',
+            animation: 'slide_from_right',
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="AddMoney"
+          component={AddMoneyScreen}
+          options={{
+            presentation: 'fullScreenModal',
+            animation: 'slide_from_right',
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

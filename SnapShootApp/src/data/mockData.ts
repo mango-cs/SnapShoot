@@ -60,6 +60,7 @@ export interface User {
   walletBalance: number;
   joinDate: Date;
   verified: boolean;
+  dateOfBirth?: Date; // Optional field for birthday
 }
 
 // Mock Services Data

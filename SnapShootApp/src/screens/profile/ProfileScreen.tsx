@@ -177,6 +177,7 @@ const ProfileScreen: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 20, // Match HomeScreen container padding
   },
   scrollView: {
     flex: 1,
@@ -186,7 +187,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    paddingTop: 20,
+    paddingTop: 40, // Match HomeScreen header padding for consistent 60px total
     paddingBottom: 16,
   },
   profileInfo: {

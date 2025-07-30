@@ -9,13 +9,18 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
+  Image,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { AuthStackParamList } from '../../navigation/AuthNavigator';
 import { useTheme } from '../../contexts/ThemeContext';
 import { PrimaryButton } from '../../components/ui/Button';
 
+type LoginScreenNavigationProp = NativeStackNavigationProp<AuthStackParamList, 'Login'>;
+
 const LoginScreen: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<LoginScreenNavigationProp>();
   const { theme } = useTheme();
   const [phoneNumber, setPhoneNumber] = useState('');
   const [acceptedTerms, setAcceptedTerms] = useState(false);
@@ -50,7 +55,7 @@ const LoginScreen: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 1500));
       
       // Navigate to OTP verification
-      navigation.navigate('OTPVerification', { phoneNumber } as never);
+      navigation.navigate('OTPVerification', { phoneNumber });
     } catch (error) {
       Alert.alert('Error', 'Failed to send OTP. Please try again.');
     } finally {
@@ -67,9 +72,11 @@ const LoginScreen: React.FC = () => {
         <View style={styles.content}>
           {/* Logo */}
           <View style={styles.logoContainer}>
-            <Text style={[styles.logo, { color: theme.colors.text.primary }]}>
-              FLA⚡SHOOT
-            </Text>
+            <Image
+              source={require('../../../assets/images/snapshoot-logo.png')}
+              style={styles.logo}
+              resizeMode="contain"
+            />
           </View>
 
           {/* Form */}
@@ -135,15 +142,20 @@ const LoginScreen: React.FC = () => {
               fullWidth
             />
           </View>
-
-          {/* Footer */}
-          <View style={styles.footer}>
-            <Text style={[styles.footerText, { color: theme.colors.text.tertiary }]}>
-              a product by konchamkode
-            </Text>
-          </View>
         </View>
       </KeyboardAvoidingView>
+      
+      {/* Fixed Footer - Outside KeyboardAvoidingView */}
+      <View style={[styles.footer, { backgroundColor: theme.colors.background.primary }]}>
+        <Text style={[styles.footerText, { color: theme.colors.text.tertiary }]}>
+          a product by
+        </Text>
+        <Image
+          source={require('../../../assets/images/mango-code-logo.png')}
+          style={styles.footerImage}
+          resizeMode="contain"
+        />
+      </View>
     </SafeAreaView>
   );
 };
@@ -158,7 +170,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     paddingHorizontal: 24,
-    justifyContent: 'space-between',
+    paddingBottom: 100, // Add padding to account for fixed footer
   },
   logoContainer: {
     alignItems: 'center',
@@ -166,9 +178,8 @@ const styles = StyleSheet.create({
     marginBottom: 60,
   },
   logo: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    letterSpacing: 2,
+    width: 200,
+    height: 80,
   },
   formContainer: {
     flex: 1,
@@ -233,12 +244,22 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   footer: {
-    alignItems: 'center',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingHorizontal: 24,
     paddingBottom: 40,
+    paddingTop: 20,
+    alignItems: 'center',
   },
   footerText: {
-    fontSize: 14,
-    fontStyle: 'italic',
+    fontSize: 12,
+    marginBottom: 8,
+  },
+  footerImage: {
+    width: 120,
+    height: 40,
   },
 });
 
